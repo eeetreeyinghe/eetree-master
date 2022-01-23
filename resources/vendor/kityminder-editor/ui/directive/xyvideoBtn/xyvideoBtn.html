@@ -1,0 +1,27 @@
+<div class="btn-group-vertical" dropdown is-open="isopen">
+    <button type="button"
+            class="btn btn-default video-btn"
+            title="视频"
+            ng-class="{'active': isopen}"
+            ng-click="addXyvideo()"
+            ng-disabled="minder.queryCommandState('video') === -1"></button>
+    <button type="button"
+            class="btn btn-default video-btn-caption dropdown-toggle"
+            ng-disabled="minder.queryCommandState('video') === -1"
+            title="视频"
+            dropdown-toggle>
+        <span class="caption">视频</span>
+        <span class="caret"></span>
+        <span class="sr-only">视频</span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        <li>
+            <a href
+               ng-click="addXyvideo()">插入视频</a>
+        </li>
+        <li>
+            <a href
+               ng-click="minder.execCommand('video', '')">移除已有视频</a>
+        </li>
+    </ul>
+</div>
